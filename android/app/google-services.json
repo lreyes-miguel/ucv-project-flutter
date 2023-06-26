@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "770187624653",
+    "firebase_url": "https://lab-08-5984c-default-rtdb.firebaseio.com",
+    "project_id": "lab-08-5984c",
+    "storage_bucket": "lab-08-5984c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770187624653:android:14dfd2cc247fc63258a984",
+        "android_client_info": {
+          "package_name": "com.remi.minimarket_remi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770187624653-hv1jsj5trr0pikk8666gth4hrdlaf5jp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5sU4LQKmIqLpH5PcG6IoLztLg4J0Ef2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770187624653-hv1jsj5trr0pikk8666gth4hrdlaf5jp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
