@@ -25,6 +25,7 @@ class ProductsPage extends StatelessWidget {
               itemCount: products.length,
               separatorBuilder: (context, index) => Divider(),
               itemBuilder: (context, index) {
+
                 return FutureBuilder<String>(
                   future: getCategoryName(products[index].categoryId),
                   builder: (context, snapshot) {
@@ -39,14 +40,14 @@ class ProductsPage extends StatelessWidget {
                     } else {
                       String categoryName = snapshot.data ?? 'Categoría desconocida';
                       return ListTile(
-                        title: Text('Código: ${products[index].code}'),
-                        subtitle: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Nombre: ${products[index].name}'),
-                            Text('Categoría: $categoryName'),
-                          ],
+                        leading: Image(
+                            height: 72.0,
+                            width: 72.0,
+                            image: NetworkImage(products[index].image)
                         ),
+                        title: Text('#${products[index].code} - ${products[index].name}'),
+                        subtitle: Text('Categoría: $categoryName'),
+                        trailing: Icon(Icons.edit_rounded),
                       );
                     }
                   },
@@ -92,15 +93,17 @@ class ProductsPage extends StatelessWidget {
 class Product {
   final String code;
   final String name;
+  final String image;
   final String categoryId;
 
-  Product({required this.code, required this.name, required this.categoryId});
+  Product({required this.code, required this.name, required this.image, required this.categoryId});
 
   factory Product.fromSnapshot(DocumentSnapshot snapshot) {
     Map<String, dynamic> data = snapshot.data() as Map<String, dynamic>;
     return Product(
       code: data['id_producto'].toString() ?? '',
       name: data['nombre_producto'] ?? '',
+      image: data['foto_producto'] ?? 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/046.png',
       categoryId: data['id_categoria'].toString() ?? '',
     );
   }

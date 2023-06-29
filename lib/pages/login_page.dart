@@ -75,6 +75,7 @@ class LoginPage extends StatelessWidget {
                 decoration: InputDecoration(
                   labelText: 'Correo electrónico',
                   prefixIcon: Icon(Icons.email),
+                  border: OutlineInputBorder(),
                 ),
               ),
               SizedBox(height: 16.0),
@@ -83,6 +84,7 @@ class LoginPage extends StatelessWidget {
                 decoration: InputDecoration(
                   labelText: 'Contraseña',
                   prefixIcon: Icon(Icons.lock),
+                  border: OutlineInputBorder(),
                 ),
                 obscureText: true,
               ),

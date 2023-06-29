@@ -14,7 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Minimarket Remi',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: const ColorScheme.light().copyWith(
+          primary: Colors.green[700],
+          secondary: Colors.green[700],
+        ),
+        useMaterial3: true,
       ),
       home: LoginPage(),
     );
