@@ -7,15 +7,15 @@ class ProductsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Productos'),
+        title: const Text('Productos'),
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance.collection('PRODUCTO').snapshots(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            return Center(child: Text('Error al obtener los productos'));
+            return const Center(child: Text('Error al obtener los productos'));
           } else {
             List<Product> products = snapshot.data!.docs.map((doc) {
               return Product.fromSnapshot(doc);
@@ -23,18 +23,18 @@ class ProductsPage extends StatelessWidget {
 
             return ListView.separated(
               itemCount: products.length,
-              separatorBuilder: (context, index) => Divider(),
+              separatorBuilder: (context, index) => const Divider(),
               itemBuilder: (context, index) {
 
                 return FutureBuilder<String>(
                   future: getCategoryName(products[index].categoryId),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
-                      return ListTile(
+                      return const ListTile(
                         title: Text('Cargando...'),
                       );
                     } else if (snapshot.hasError) {
-                      return ListTile(
+                      return const ListTile(
                         title: Text('Error al obtener la categoría'),
                       );
                     } else {
@@ -58,7 +58,7 @@ class ProductsPage extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           Navigator.push(
             context,

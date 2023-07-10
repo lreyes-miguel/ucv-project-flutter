@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
           primary: Colors.green[700],
           secondary: Colors.green[700],
         ),
-        useMaterial3: true,
       ),
       home: LoginPage(),
     );

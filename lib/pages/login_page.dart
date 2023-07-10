@@ -53,9 +53,6 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Inicio de sesión'),
-      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(16.0),
@@ -64,7 +61,7 @@ class LoginPage extends StatelessWidget {
             children: [
               Container(
                 alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(vertical: 32.0),
+                padding: const EdgeInsets.symmetric(vertical: 32.0),
                 child: Image.asset(
                   'assets/images/logo.jpg',
                   height: 150.0,
@@ -72,26 +69,26 @@ class LoginPage extends StatelessWidget {
               ),
               TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Correo electrónico',
                   prefixIcon: Icon(Icons.email),
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               TextFormField(
                 controller: _passwordController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Contraseña',
                   prefixIcon: Icon(Icons.lock),
                   border: OutlineInputBorder(),
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () => login(context),
-                child: Text('Iniciar sesión'),
+                child: const Text('Iniciar sesión'),
               ),
             ],
           ),
