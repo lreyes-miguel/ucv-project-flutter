@@ -25,7 +25,6 @@ class ProductsPage extends StatelessWidget {
               itemCount: products.length,
               separatorBuilder: (context, index) => const Divider(),
               itemBuilder: (context, index) {
-
                 return FutureBuilder<String>(
                   future: getCategoryName(products[index].categoryId),
                   builder: (context, snapshot) {
@@ -75,9 +74,6 @@ class ProductsPage extends StatelessWidget {
         .where('id_categoria', isEqualTo: int.parse(categoryId))
         .limit(1)
         .get();
-    print('Holaaaa');
-    print(categoryId);
-    print(snapshot.docs);
 
     if (snapshot.docs.isNotEmpty) {
       DocumentSnapshot categorySnapshot = snapshot.docs.first;
